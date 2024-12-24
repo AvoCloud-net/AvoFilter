@@ -1,6 +1,6 @@
 # AvoFilter
 
-Minecraft integration for AvoCloud's [SafeText](https://github.com/rwolf2467/SafeText) chat filtering server.
+Minecraft integration for AvoCloud's [SafeText](https://github.com/AvoCloud-net/SafeText) chat filtering server.
 
 
 ## Default config
