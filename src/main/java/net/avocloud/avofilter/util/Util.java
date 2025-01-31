@@ -1,5 +1,6 @@
 package net.avocloud.avofilter.util;
 
+import javax.net.ssl.SSLHandshakeException;
 import java.io.DataOutputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -56,6 +57,8 @@ public class Util {
             try (DataOutputStream os = new DataOutputStream(connection.getOutputStream())) {
                 os.writeBytes(requestBody);
                 os.flush();
+            } catch (SSLHandshakeException e) {
+                JsonUtil.logger.error("SSL Handshake Exception: {} | Please check your SSL certificate.", e.getMessage());
             }
             
             try (Scanner scanner = new Scanner(connection.getInputStream())) {
